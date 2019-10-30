@@ -1,0 +1,47 @@
+.card {
+    padding: 35px;
+}
+
+.logo {
+    height: 180px;
+}
+
+.logo img {
+    margin-top: 5%;
+    width: 100px;
+    height: 100px;
+}
+
+.logo p {
+    margin-top: -13%;
+}
+
+.users_seller, .products_product, .categories_category, .brands_brand {
+    text-decoration: none;
+}
+
+.action-btn {
+    padding: 30px;
+}
+
+.show-on {
+    margin-top: 17px;
+    margin-left: 5px;
+}
+
+.breadcrumb {
+    margin-left: 20px;
+}
+
+.timestamp {
+    margin-right: 20px;
+}
+
+.footer-copyright span {
+    font-weight: bold;
+}
+
+.click-to-toggle {
+    bottom: 45px;
+    right: 24px;
+}
