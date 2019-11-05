@@ -1,0 +1,69 @@
+[
+    {
+        "icon": "home",
+        "href": "#!",
+        "name": "Painel"
+    },
+    {
+        "icon": "file",
+        "href": "#!",
+        "name": "Pedidos"
+    },
+    {
+        "icon": "shopping-cart",
+        "href": "#!",
+        "name": "Produtos"
+    },
+    {
+        "icon": "user",
+        "href": "#!",
+        "name": "Clientes"
+    },
+    {
+        "icon": "bar-chart-2",
+        "href": "#!",
+        "name": "Relatórios"
+    },
+    {
+        "icon": "layers",
+        "href": "#!",
+        "name": "Integrações",
+        "submenu": [
+            {
+                "icon": "layers",
+                "href": "#!",
+                "name": "SAP"
+            }
+        ]
+    },
+    {
+        "section": "Relatórios",
+        "itens": [
+            {
+                "icon": "file-text",
+                "href": "#!",
+                "name": "Mês Atual"
+            },
+            {
+                "icon": "file-text",
+                "href": "#!",
+                "name": "Últimos 4 meses"
+            },
+            {
+                "icon": "file-text",
+                "href": "#!",
+                "name": "Vendas fim de ano"
+            }
+        ]
+    },
+    {
+        "icon": "file-text",
+        "href": "#!",
+        "name": "GeForce"
+    },
+    {
+        "icon": "file-text",
+        "href": "#!",
+        "name": "Intel"
+    }
+]
