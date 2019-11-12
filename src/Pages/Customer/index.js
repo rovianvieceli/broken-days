@@ -9,10 +9,40 @@ export default class Order extends React.Component {
 
     componentDidMount () {
         const customer = [{
-            codigo: 201,
+            codigo: 504,
             nome: 'Prumis Hbb LTDA',
+            telefone: '0555135905718',
+            produto: 'Cabeçote Heller',
+            unidade: 'PÇ',
             endereco: 'Rua Candido de Luz de Oliveira, 122',
-            telefone: '0555135905718'
+        }, {
+            codigo: 201,
+            nome: 'Gedor do Brasil',
+            telefone: '0555136598759',
+            produto: 'Chave Inglesa',
+            unidade: 'UN',
+            endereco: 'Rua da hotencias, 22',
+        }, {
+            codigo: 708,
+            nome: 'Gerdau LTDA',
+            telefone: '0555155698547',
+            produto: 'Aço mola SAE 25666',
+            unidade: 'BN',
+            endereco: 'Rua Marechal Floriano, 13',
+        }, {
+            codigo: 78,
+            nome: 'Tramontina',
+            telefone: '0555133986694',
+            produto: 'Faquiro de patra',
+            unidade: 'JG',
+            endereco: 'Rua Idependencia, 1822',
+        }, {
+            codigo: 65,
+            nome: 'Randon',
+            telefone: '0555199865968',
+            produto: 'Balde lavabo',
+            unidade: 'UN',
+            endereco: 'Rua Ciciliano Luiz Dutra, 578',
         }];
 
         this.setState({customer});

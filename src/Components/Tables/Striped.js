@@ -2,11 +2,22 @@ import React from 'react';
 
 export default class TableStriped extends React.Component {
     handlerMakeRows (rows = []) {
-        let row = `<tr><td colSpan="5">`;
-        if (rows.length)
-            row += `adasd`;
+        let row = '';
 
-        row += `Nenhum registro localizado</td></tr>`;
+        row = <tr><td colSpan="5">Nenhum registro localizado</td></tr>;
+
+        if (rows.length) {
+            row = rows.map((row, key) => {
+                return <tr key={key}>
+                    <td>{row.codigo}</td>
+                    <td>{row.nome}</td>
+                    <td>{row.produto}</td>
+                    <td>{row.unidade}</td>
+                    <td>{row.telefone}</td>
+                    <td>{row.endereco}</td>
+                </tr>;
+            });
+        }
 
         return row;
     }
@@ -19,11 +30,12 @@ export default class TableStriped extends React.Component {
                 <table className="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th>Código</th>
-                            <th>Produto</th>
+                            <th width="8%">Código</th>
                             <th>Cliente</th>
                             <th>Contato</th>
                             <th>Unidade Medida</th>
+                            <th>Produto</th>
+                            <th>Endereço</th>
                         </tr>
                     </thead>
                     <tbody>
