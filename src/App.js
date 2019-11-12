@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import 'jquery/dist/jquery';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -8,10 +9,10 @@ import feather from 'feather-icons/dist/feather';
 
 import './App.css';
 
-import Nav from './Components/Navbar/Nav';
-import Sidebar from './Components/Menu/Sidebar';
-import BreadCrumb from './Components/Breadcrumb/Breadcrumb';
-import Dashboard from './Pages/dashboard';
+import Nav from './Components/Navbar/nav';
+import Sidebar from './Components/Menu/sidebar';
+import BreadCrumb from './Components/Breadcrumb';
+import Router from './routes';
 
 export default class App extends React.Component {
   componentDidMount () {
@@ -24,11 +25,13 @@ export default class App extends React.Component {
         <Nav />
         <div className="container-fluid">
           <div className="row">
-            <Sidebar />
-            <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-              <BreadCrumb />
-              <Dashboard />
-            </main>
+            <BrowserRouter>
+              <Sidebar />
+              <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <BreadCrumb />
+                <Router />
+              </main>
+            </BrowserRouter>
           </div>
         </div>
       </div>
