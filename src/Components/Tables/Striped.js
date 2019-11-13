@@ -1,45 +1,45 @@
 import React from 'react';
 
-export default class TableStriped extends React.Component {
-    handlerMakeRows (rows = []) {
-        let row = '';
 
-        row = <tr><td colSpan="5">Nenhum registro localizado</td></tr>;
+export default class TableStriped extends React.Component {
+
+    handlerMakeRowsHead (data = {}) {
+        const rows = Object.keys(data);
 
         if (rows.length) {
-            row = rows.map((row, key) => {
-                return <tr key={key}>
-                    <td>{row.codigo}</td>
-                    <td>{row.nome}</td>
-                    <td>{row.produto}</td>
-                    <td>{row.unidade}</td>
-                    <td>{row.telefone}</td>
-                    <td>{row.endereco}</td>
-                </tr>;
-            });
-        }
+            const th = rows.map((title, key) => (React.createElement('th', { key: key, 'width': `${data[title]}%` }, title)));
+            const list = React.createElement('tr', {}, th);
 
-        return row;
+            return list
+        }
+    }
+
+    handlerMakeRowsBody (data = []) {
+        if (data.length) {
+            const rows = data.map((row, key) => (
+                React.createElement('tr', { key: key }, [
+                    Object.values(row).map((value, key) => (
+                        React.createElement('td', { key: key }, value)
+                    ))
+                ])
+
+            ))
+
+            return rows;
+        }
     }
 
     render () {
-        const { data } = this.props;
+        const { DataHead, DataGrid } = this.props;
 
         return (
             <div className="table-responsive">
                 <table className="table table-striped table-sm">
                     <thead>
-                        <tr>
-                            <th width="8%">Código</th>
-                            <th>Cliente</th>
-                            <th>Contato</th>
-                            <th>Unidade Medida</th>
-                            <th>Produto</th>
-                            <th>Endereço</th>
-                        </tr>
+                        {this.handlerMakeRowsHead(DataHead)}
                     </thead>
                     <tbody>
-                        {this.handlerMakeRows(data)}
+                        {this.handlerMakeRowsBody(DataGrid)}
                     </tbody>
                 </table>
             </div>

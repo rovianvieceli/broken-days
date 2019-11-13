@@ -11,7 +11,6 @@ import './App.css';
 
 import Nav from './Components/Navbar/nav';
 import Sidebar from './Components/Menu/sidebar';
-import BreadCrumb from './Components/Breadcrumb';
 import Router from './routes';
 
 export default class App extends React.Component {
@@ -28,7 +27,6 @@ export default class App extends React.Component {
             <BrowserRouter>
               <Sidebar />
               <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <BreadCrumb />
                 <Router />
               </main>
             </BrowserRouter>

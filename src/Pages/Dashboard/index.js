@@ -1,6 +1,5 @@
 import React from 'react';
 
-import TableStriped from '../../Components/Tables/striped';
 import Line from '../../Components/Charts/line';
 
 export default class Dashboard extends React.Component {
@@ -19,9 +18,6 @@ export default class Dashboard extends React.Component {
                     </div>
                 </div>
                 <Line />
-
-                <h2>Vendas</h2>
-                <TableStriped />
             </div>
         )
     }

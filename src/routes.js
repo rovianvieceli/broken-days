@@ -7,17 +7,19 @@ import Product from './Pages/Product';
 import Customer from './Pages/Customer';
 import Report from './Pages/Report';
 import Integration from './Pages/Integration';
+import Favorite from './Pages/Favorite';
 
 export default class Router extends React.Component {
     render () {
         return (
             <Switch>
-                <Route exact={true} path="/" component={Dashboard} />
+                <Route path="/" component={Dashboard} exact={true} />
                 <Route path="/order" component={Order} />
                 <Route path="/product" component={Product} />
                 <Route path="/customer" component={Customer} />
                 <Route path="/report" component={Report} />
                 <Route path="/integration" component={Integration} />
+                <Route path="/favorite" component={Favorite} />
             </Switch>
         )
     }
