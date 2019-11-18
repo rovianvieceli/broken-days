@@ -11,6 +11,13 @@ export default class Sidebar extends React.Component {
         this.handlerActive.bind(this);
     }
 
+    componentDidMount () {
+        const { pathname } = window.location;
+        const $link = $(`a[href="${pathname}"]`);
+
+        $link.addClass('active')
+    }
+
     handlerActive (event) {
         const $link = $(event.target);
 

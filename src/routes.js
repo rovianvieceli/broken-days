@@ -8,6 +8,7 @@ import Customer from './Pages/Customer';
 import Report from './Pages/Report';
 import Integration from './Pages/Integration';
 import Favorite from './Pages/Favorite';
+import NotFound404 from './Components/Error/NotFound';
 
 export default class Router extends React.Component {
     render () {
@@ -20,6 +21,7 @@ export default class Router extends React.Component {
                 <Route path="/report" component={Report} />
                 <Route path="/integration" component={Integration} />
                 <Route path="/favorite" component={Favorite} />
+                <Route path="*" component={NotFound404} />
             </Switch>
         )
     }

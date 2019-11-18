@@ -61,7 +61,7 @@ export default class Favorite extends React.Component {
     }
 
     render () {
-        const { head, favorites, icons } = this.state;
+        const { head, favorites } = this.state;
 
         return (
             <div>
