@@ -32,7 +32,7 @@ export default class Sidebar extends React.Component {
                     <ul className="nav flex-column">
                         <li className="nav-item">
                             <Link to="/" className="nav-link" onClick={this.handlerActive.bind(this)}>
-                                <span data-feather="home"></span>Painel <span className="sr-only">(current)</span>
+                                <span data-feather="home"></span>Painel
                             </Link>
                         </li>
                         <li className="nav-item">
