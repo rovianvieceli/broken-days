@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TableStriped from '../../Components/Tables/striped';
+import TableStriped from '../../Components/Tables/Striped';
 import SubHeader from '../../Components/SubHeader';
 
 export default class Order extends React.Component {

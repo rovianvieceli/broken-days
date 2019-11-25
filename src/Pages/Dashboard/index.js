@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Line from '../../Components/Charts/line';
+import Line from '../../Components/Charts/Line';
 import SubHeader from '../../Components/SubHeader';
 
 export default class Dashboard extends React.Component {

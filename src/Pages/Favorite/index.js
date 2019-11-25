@@ -1,5 +1,5 @@
 import React from 'react';
-import TableStriped from '../../Components/Tables/striped';
+import TableStriped from '../../Components/Tables/Striped';
 
 import $ from 'jquery';
 

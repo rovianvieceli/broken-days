@@ -9,8 +9,8 @@ import feather from 'feather-icons/dist/feather';
 
 import './App.css';
 
-// import Nav from './Components/Navbar/nav';
-import Sidebar from './Components/Menu/sidebar';
+import Nav from './Components/Navbar/Nav';
+import Sidebar from './Components/Menu/Sidebar';
 import Router from './routes';
 
 export default class App extends React.Component {
@@ -22,7 +22,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <BrowserRouter>
-          {/* <Nav /> */}
+          <Nav />
           <div className="container-fluid">
             <div className="row">
               <Sidebar />
