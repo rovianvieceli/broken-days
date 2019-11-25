@@ -1,23 +1,54 @@
 import React from 'react';
 import TableStriped from '../../Components/Tables/striped';
 
+import $ from 'jquery';
+
 import iconsJson from 'feather-icons/dist/icons.json'
 import SubHeader from '../../Components/SubHeader';
 
 export default class Favorite extends React.Component {
-    state = {
-        head: {
-            "Código": 10,
-            "Link": 35,
-            "Rota": 35,
-            "Ícone": 20
-        },
-        favorites: [],
-        icons: []
+
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            tableHead: [{
+                label: "Código",
+                size: 10
+            }, {
+                label: "Link",
+                size: 35
+            }, {
+                label: "Rota",
+                size: 35
+            }, {
+                label: "Ícone",
+                size: 20
+            }],
+            favoriteIcon: 'selecione',
+            favorites: [],
+            icons: []
+        };
+
+        this.handleFavoriteIcon = this.handleFavoriteIcon.bind(this);
+    }
+
+    handleFavoriteIcon (event) {
+        const { inputValue } = event.target;
+        const $select = $('select#favorite-icon');
+        const preview = '<div class="input-group-append input-group-text"><span data-feather=' + inputValue + '></span></div>';
+
+        $select.after(preview);
+        this.setState({ favoriteIcon: inputValue });
     }
 
     componentDidMount () {
-        const icons = Object.keys(iconsJson).map((icon) => ({ name: icon }));
+        const icons = Object.keys(iconsJson).map(icon => {
+            let humanize = icon.replace(/\b[a-z]/g, letter => letter.toUpperCase()).replace(/-/g, ' ');
+
+            return { name: humanize, alias: icon }
+        });
+
         const favorites = [{
             codigo: 504,
             link: 'Mês Atual',
@@ -29,7 +60,7 @@ export default class Favorite extends React.Component {
     }
 
     render () {
-        const { head, favorites } = this.state;
+        const { tableHead, favorites, icons } = this.state;
 
         return (
             <div>
@@ -53,10 +84,14 @@ export default class Favorite extends React.Component {
                         </div>
 
                         <div className="col-sm-12 col-md-3">
-                            <label htmlFor="route">Ícone</label>
+                            <label htmlFor="favorite-icon">Ícone</label>
                             <div className="input-group">
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Selecione</option>
+                                <select className="custom-select" id="favorite-icon"
+                                    value={this.state.favoriteIcon} onChange={this.handleFavoriteIcon}>
+                                    <option value="selecione">Selecione</option>
+                                    {icons.map((item, key) => {
+                                        return <option key={key} value={item.alias}>{item.name}</option>
+                                    })}
                                 </select>
                             </div>
                         </div>
@@ -64,7 +99,7 @@ export default class Favorite extends React.Component {
                         <div className="col-sm-12 col-md-2">
                             <label htmlFor="submit">&nbsp;</label>
                             <div className="input-group">
-                                <button id="submit" type="submit" class="btn btn-outline-secondary">
+                                <button id="submit" type="submit" className="btn btn-outline-secondary">
                                     <span data-feather="plus"></span>
                                 </button>
                             </div>
@@ -72,7 +107,7 @@ export default class Favorite extends React.Component {
                     </div>
                 </form>
 
-                <TableStriped DataHead={head} DataGrid={favorites} />
+                <TableStriped DataHead={tableHead} DataGrid={favorites} />
             </div>
         )
     }

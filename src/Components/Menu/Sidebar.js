@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import $ from 'jquery/dist/jquery';
+import $ from 'jquery';
 
 export default class Sidebar extends React.Component {
 

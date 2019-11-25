@@ -3,13 +3,13 @@ import React from 'react';
 
 export default class TableStriped extends React.Component {
 
-    handlerMakeRowsHead (data = {}) {
-        const rows = Object.keys(data);
+    handlerMakeRowsHead (data = []) {
+        if (data.length) {
+            const th = data.map((props, key) => (
+                React.createElement('th', { key: key, 'width': `${props.size}%` }, props.label))
+            );
 
-        if (rows.length) {
-            const th = rows.map((title, key) => (React.createElement('th', { key: key, 'width': `${data[title]}%` }, title)));
             const list = React.createElement('tr', {}, th);
-
             return list
         }
     }
