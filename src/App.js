@@ -9,7 +9,7 @@ import feather from 'feather-icons/dist/feather';
 
 import './App.css';
 
-import Nav from './Components/Navbar/nav';
+// import Nav from './Components/Navbar/nav';
 import Sidebar from './Components/Menu/sidebar';
 import Router from './routes';
 
@@ -22,7 +22,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <Nav />
+          {/* <Nav /> */}
           <div className="container-fluid">
             <div className="row">
               <Sidebar />
