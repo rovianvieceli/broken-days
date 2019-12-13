@@ -5,8 +5,6 @@ import 'jquery/dist/jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle'
 
-import feather from 'feather-icons/dist/feather';
-
 import './App.css';
 
 import Nav from './Components/Navbar/Nav';
@@ -14,10 +12,6 @@ import Sidebar from './Components/Menu/Sidebar';
 import Router from './routes';
 
 export default class App extends React.Component {
-  componentDidMount () {
-    feather.replace();
-  }
-
   render () {
     return (
       <div className="App">

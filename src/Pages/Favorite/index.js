@@ -1,8 +1,6 @@
 import React from 'react';
 import TableStriped from '../../Components/Tables/Striped';
 
-import $ from 'jquery';
-
 import iconsJson from 'feather-icons/dist/icons.json'
 import SubHeader from '../../Components/SubHeader';
 
@@ -34,12 +32,6 @@ export default class Favorite extends React.Component {
     }
 
     handleFavoriteIcon (event) {
-        const { inputValue } = event.target;
-        const $select = $('select#favorite-icon');
-        const preview = '<div class="input-group-append input-group-text"><span data-feather=' + inputValue + '></span></div>';
-
-        $select.after(preview);
-        this.setState({ favoriteIcon: inputValue });
     }
 
     componentDidMount () {
@@ -99,9 +91,7 @@ export default class Favorite extends React.Component {
                         <div className="col-sm-12 col-md-2">
                             <label htmlFor="submit">&nbsp;</label>
                             <div className="input-group">
-                                <button id="submit" type="submit" className="btn btn-outline-secondary">
-                                    <span data-feather="plus"></span>
-                                </button>
+                                <button id="submit" type="submit" className="btn btn-outline-secondary">Add</button>
                             </div>
                         </div>
                     </div>

@@ -12,8 +12,7 @@ export default class SubHeader extends React.Component {
                         <button type="button" className="btn btn-sm btn-outline-secondary">Compartilhar</button>
                         <button type="button" className="btn btn-sm btn-outline-secondary">Exportar</button>
                     </div>
-                    <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle">
-                        <span data-feather="calendar"></span>Semana</button>
+                    <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle">Semana</button>
                 </div>
             </div>
         )
